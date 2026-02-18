@@ -1,4 +1,5 @@
 public class Payment {
+
     private int cus_id;
     private int payment_id;
     private String payment_type;
@@ -6,6 +7,7 @@ public class Payment {
     private String payment_date;
 
     public Payment(int cus_id, int payment_id, String payment_type, int book_id, String payment_date) {
+
         this.cus_id = cus_id;
         this.payment_id = payment_id;
         this.payment_type = payment_type;
@@ -13,18 +15,31 @@ public class Payment {
         this.payment_date = payment_date;
     }
 
-    public boolean checking(Customer c, Booking b) {
-        if (c.getCus_id() == cus_id && b.getBook_id() == book_id) {
-            return true;
-        }
-        return false;
+    public int getCus_id() {
+        return cus_id;
+    }
+
+    public int getPayment_id() {
+        return payment_id;
+    }
+
+    public String getPayment_type() {
+        return payment_type;
+    }
+
+    public int getBook_id() {
+        return book_id;
+    }
+
+    public String getPayment_date() {
+        return payment_date;
     }
 
     public void displayPayment() {
-        System.out.println("Customer id: " + cus_id);
-        System.out.println("Payment id: " + payment_id);
+        System.out.println("Customer ID: " + cus_id);
+        System.out.println("Payment ID: " + payment_id);
         System.out.println("Payment Type: " + payment_type);
-        System.out.println("Booking id: " + book_id);
-        System.out.println("Payment date: " + payment_date);
+        System.out.println("Booking ID: " + book_id);
+        System.out.println("Payment Date: " + payment_date);
     }
 }

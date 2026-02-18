@@ -1,12 +1,15 @@
 public class Vehicle {
+
     private int vehicle_id;
     private String vehicle_type;
-    private String pricing;
+    private double pricing;
+    private boolean available;
 
-    public Vehicle(int vehicle_id, String vehicle_type, String pricing) {
+    public Vehicle(int vehicle_id, String vehicle_type, double pricing) {
         this.vehicle_id = vehicle_id;
         this.vehicle_type = vehicle_type;
         this.pricing = pricing;
+        this.available = true; // default available
     }
 
     public int getVehicle_id() {
@@ -17,19 +20,22 @@ public class Vehicle {
         return vehicle_type;
     }
 
-    public String getPricing() {
+    public double getPricing() {
         return pricing;
     }
 
-    public void displayVehicle() {
-        System.out.println("Vehicle id: " + vehicle_id);
-        System.out.println("Vehicle type: " + vehicle_type);
-        System.out.println("Price " + pricing);
+    public boolean isAvailable() {
+        return available;
     }
 
-    public void listall()
-    {
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
 
+    public void displayVehicle() {
+        System.out.println("Vehicle ID: " + vehicle_id);
+        System.out.println("Type: " + vehicle_type);
+        System.out.println("Price: " + pricing);
+        System.out.println("Available: " + (available ? "yes" : "no"));
     }
 }
-
